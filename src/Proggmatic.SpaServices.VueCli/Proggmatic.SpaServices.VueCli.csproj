@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <RootNamespace>Proggmatic.SpaServices.VueCli</RootNamespace>
+    <AssemblyName>Proggmatic.SpaServices.VueCli</AssemblyName>
     <LangVersion>latest</LangVersion>
     <Nullable>enable</Nullable>
 
@@ -20,6 +20,8 @@
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
     <PackageIcon>icon.png</PackageIcon>
+    
+    <PackageTags>Vue CLI SPA middleware server serve</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>

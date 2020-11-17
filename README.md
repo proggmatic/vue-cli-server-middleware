@@ -1,6 +1,6 @@
 # Vue CLI Server Middleware
 
-[![](https://img.shields.io/nuget/v/VueCliServerMiddleware.svg)](https://www.nuget.org/packages/VueCliServerMiddleware/)
+[![](https://buildstats.info/nuget/Proggmatic.SpaServices.VueCli)](https://www.nuget.org/packages/Proggmatic.SpaServices.VueCli/)
 
 Provides dev-time support for [Vue CLI](https://cli.vuejs.org/) in ASP.NET Core's SPA scenarios. 
 
@@ -18,12 +18,15 @@ ASP.NET Core web project, then modify the `Startup.cs` file similar to the follo
 
 
 ```cs
+using Proggmatic.SpaServices.VueCli;                  //-- new addition --//
+
+
 public void ConfigureServices(IServiceCollection services)
 {
   // ... other ASP.NET configuration skipped
 
 
-  // new addition here
+  //-- new addition --//
   services.AddSpaStaticFiles(configuration =>
   {
     configuration.RootPath = "ClientApp/dist";
@@ -35,11 +38,12 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
   // ... other aspnet configuration skipped here
 
   app.UseStaticFiles();
-  app.UseSpaStaticFiles();                            // new addition
+
+  app.UseSpaStaticFiles();                            //-- new addition --//
   
   // ... more default stuff
 
-  // new addition at end
+  //-- new addition --//
   app.UseSpa(spa =>
   {
     // spa.Options.SourcePath = "ClientApp";          // Optional. If this string is commented, ClientApp will be used
