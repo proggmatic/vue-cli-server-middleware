@@ -4,6 +4,9 @@ using System.Threading.Tasks;
 
 namespace Proggmatic.SpaServices.VueCli.Util
 {
+    /// <summary>
+    /// Original: https://github.com/dotnet/aspnetcore/blob/master/src/Middleware/SpaServices.Extensions/src/Util/TaskTimeoutExtensions.cs
+    /// </summary>
     internal static class TaskTimeoutExtensions
     {
         public static async Task WithTimeout(this Task task, TimeSpan timeoutDelay, string message)

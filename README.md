@@ -23,7 +23,7 @@ using Proggmatic.SpaServices.VueCli;                  //-- new addition --//
 
 public void ConfigureServices(IServiceCollection services)
 {
-  // ... other ASP.NET configuration skipped
+  // ... other .NET configuration skipped
 
 
   //-- new addition --//
@@ -35,7 +35,7 @@ public void ConfigureServices(IServiceCollection services)
 
 public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 {
-  // ... other aspnet configuration skipped here
+  // ... other .NET configuration skipped here
 
   app.UseStaticFiles();
 
@@ -43,11 +43,17 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
   
   // ... more default stuff
 
+  app.UseEndpoints(routes =>
+  {
+      // you app routes...
+  }
+
+
   //-- new addition --//
   app.UseSpa(spa =>
   {
-    // spa.Options.SourcePath = "ClientApp";          // Optional. If this string is commented, ClientApp will be used
-    // spa.Options.PackageManagerCommand = "npm";     // Optional. If this string is commented, npm will be used. You may use yarn instead of npm.
+    // spa.Options.SourcePath = "ClientApp";          // Optional. If this string is commented, "ClientApp" will be used
+    // spa.Options.PackageManagerCommand = "yarn";    // Optional. If this string is commented, "npm" will be used. You may use yarn instead of npm.
 
     if (env.IsDevelopment())
     {

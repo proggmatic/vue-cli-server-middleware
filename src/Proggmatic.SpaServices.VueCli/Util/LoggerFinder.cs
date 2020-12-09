@@ -6,6 +6,9 @@ using Microsoft.Extensions.Logging.Abstractions;
 
 namespace Proggmatic.SpaServices.VueCli.Util
 {
+    /// <summary>
+    /// Original: https://github.com/dotnet/aspnetcore/blob/master/src/Middleware/SpaServices.Extensions/src/Util/LoggerFinder.cs
+    /// </summary>
     internal static class LoggerFinder
     {
         public static ILogger GetOrCreateLogger(

@@ -6,7 +6,7 @@
     <LangVersion>latest</LangVersion>
     <Nullable>enable</Nullable>
 
-    <Version>5.0.0</Version>
+    <Version>5.0.1</Version>
 
     <Title>Vue CLI Server Middleware</Title>
     <Description>Vue CLI middleware and helpers for building and serving single page applications on ASP.NET Core.</Description>
@@ -20,8 +20,11 @@
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
     <PackageIcon>icon.png</PackageIcon>
-    
+
     <PackageTags>Vue CLI SPA middleware server serve</PackageTags>
+    <PackageReleaseNotes>
+      Updated to .NET 5.0.1. Got changes from Microsoft's update of internal files.
+    </PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
@@ -31,7 +34,7 @@
 
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="5.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="5.0.1" />
   </ItemGroup>
 
   <ItemGroup>

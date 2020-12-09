@@ -1,18 +1,19 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
 using System.Threading;
 
 using Microsoft.Extensions.Logging;
 
+using Proggmatic.SpaServices.VueCli.Util;
 
-namespace Proggmatic.SpaServices.VueCli.Util
+
+namespace Proggmatic.SpaServices.VueCli.Npm
 {
     /// <summary>
-    /// Executes the <c>script</c> entries defined in a <c>package.json</c> file,
-    /// capturing any output written to stdio.
+    /// Executes the <c>script</c> entries defined in a <c>package.json</c> file, capturing any output written to stdio.
+    /// Original: https://github.com/dotnet/aspnetcore/blob/master/src/Middleware/SpaServices.Extensions/src/Npm/NodeScriptRunner.cs
     /// </summary>
     internal class NodeScriptRunner : IDisposable
     {
@@ -52,7 +53,7 @@ namespace Proggmatic.SpaServices.VueCli.Util
                 completeArguments += $" {arguments}";
             }
 
-            if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+            if (OperatingSystem.IsWindows())
             {
                 // On Windows, the node executable is a .cmd file, so it can't be executed
                 // directly (except with UseShellExecute=true, but that's no good, because

@@ -10,6 +10,7 @@ namespace Proggmatic.SpaServices.VueCli.Util
     /// <summary>
     /// Wraps a <see cref="StreamReader"/> to expose an evented API, issuing notifications
     /// when the stream emits partial lines, completed lines, or finally closes.
+    /// Original: https://github.com/dotnet/aspnetcore/blob/master/src/Middleware/SpaServices.Extensions/src/Util/EventedStreamReader.cs
     /// </summary>
     internal class EventedStreamReader
     {

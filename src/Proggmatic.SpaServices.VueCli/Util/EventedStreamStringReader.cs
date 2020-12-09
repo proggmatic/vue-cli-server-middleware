@@ -5,8 +5,8 @@ using System.Text;
 namespace Proggmatic.SpaServices.VueCli.Util
 {
     /// <summary>
-    /// Captures the completed-line notifications from a <see cref="EventedStreamReader"/>,
-    /// combining the data into a single <see cref="string"/>.
+    /// Captures the completed-line notifications from a <see cref="EventedStreamReader"/>, combining the data into a single <see cref="string"/>.
+    /// Original: https://github.com/dotnet/aspnetcore/blob/master/src/Middleware/SpaServices.Extensions/src/Util/EventedStreamReader.cs
     /// </summary>
     internal class EventedStreamStringReader : IDisposable
     {
