@@ -21,7 +21,7 @@ namespace Proggmatic.SpaServices.VueCli.Npm
         public EventedStreamReader StdOut { get; }
         public EventedStreamReader StdErr { get; }
 
-        private static readonly Regex AnsiColorRegex = new Regex("\x001b\\[[0-9;]*m", RegexOptions.None, TimeSpan.FromSeconds(1));
+        private static readonly Regex AnsiColorRegex = new("\x001b\\[[0-9;]*m", RegexOptions.None, TimeSpan.FromSeconds(1));
 
         public NodeScriptRunner(string workingDirectory, string scriptName, string? arguments, IDictionary<string, string>? envVars, string pkgManagerCommand, DiagnosticSource diagnosticSource,
             CancellationToken applicationStoppingToken)
@@ -123,7 +123,7 @@ namespace Proggmatic.SpaServices.VueCli.Npm
             // hence just pass it through to StdOut regardless of logger config.
             StdErr.OnReceivedChunk += chunk =>
             {
-                if (chunk.Array == null) return;
+                Debug.Assert(chunk.Array != null);
 
                 var containsNewline = Array.IndexOf(
                     chunk.Array, '\n', chunk.Offset, chunk.Count) >= 0;
@@ -141,10 +141,10 @@ namespace Proggmatic.SpaServices.VueCli.Npm
         {
             try
             {
-                var process = Process.Start(startInfo);
+                var process = Process.Start(startInfo)!;
 
                 // See equivalent comment in OutOfProcessNodeInstance.cs for why
-                process!.EnableRaisingEvents = true;
+                process.EnableRaisingEvents = true;
 
                 return process;
             }

@@ -28,9 +28,7 @@ namespace Proggmatic.SpaServices.VueCli
         private static readonly TimeSpan RegexMatchTimeout = TimeSpan.FromSeconds(5); // This is a development-time only feature, so a very long timeout is fine
 
 
-        public static void Attach(
-            ISpaBuilder spaBuilder,
-            string scriptName)
+        public static void Attach(ISpaBuilder spaBuilder, string scriptName)
         {
             var pkgManagerCommand = spaBuilder.Options.PackageManagerCommand;
             var sourcePath = spaBuilder.Options.SourcePath;

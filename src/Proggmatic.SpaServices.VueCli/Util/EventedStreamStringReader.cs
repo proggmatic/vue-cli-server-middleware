@@ -11,7 +11,7 @@ namespace Proggmatic.SpaServices.VueCli.Util
     internal class EventedStreamStringReader : IDisposable
     {
         private readonly EventedStreamReader _eventedStreamReader;
-        private readonly StringBuilder _stringBuilder = new StringBuilder();
+        private readonly StringBuilder _stringBuilder = new();
         private bool _isDisposed;
 
 
