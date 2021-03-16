@@ -58,6 +58,10 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
     if (env.IsDevelopment())
     {
       spa.UseVueCliServer();
+      
+      // Or to build not by starting this application but manually uncomment next lines and comment line above
+      // spa.ApplicationBuilder.UseFixSpaPathBaseBugMiddleware();     // Uncomment this, if you want to use non-root url for proxying (like http://localhost:8080/my-custom-path)
+      // spa.UseProxyToSpaDevelopmentServer("http://localhost:8080");
     }
   });
 }

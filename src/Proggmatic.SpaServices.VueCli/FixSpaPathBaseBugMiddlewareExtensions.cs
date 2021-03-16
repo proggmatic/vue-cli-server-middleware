@@ -4,7 +4,10 @@ using Microsoft.AspNetCore.Http;
 
 namespace Proggmatic.SpaServices.VueCli
 {
-    public static class FixSpaPathBaseBugMiddleware
+    /// <summary>
+    /// Extension class for including middleware
+    /// </summary>
+    public static class FixSpaPathBaseBugMiddlewareExtensions
     {
         /// <summary>
         /// Need only if you prefer to use non-automatic proxy like this <code>spa.UseProxyToSpaDevelopmentServer("http://localhost:8080/my-custom-path");</code>
