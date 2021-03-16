@@ -6,7 +6,7 @@
     <LangVersion>latest</LangVersion>
     <Nullable>enable</Nullable>
 
-    <Version>5.0.3</Version>
+    <Version>5.0.4</Version>
 
     <Title>Vue CLI Server Middleware</Title>
     <Description>Vue CLI middleware and helpers for building and serving single page applications on ASP.NET Core.</Description>
@@ -23,7 +23,7 @@
 
     <PackageTags>Vue CLI SPA middleware server serve</PackageTags>
     <PackageReleaseNotes>
-      Updated to .NET 5.0.3. Got changes from Microsoft's update of internal files. Nullable support.
+      Updated to .NET 5.0.4. Add fix for Microsoft's bug to support non-root paths for manual proxying.
     </PackageReleaseNotes>
   </PropertyGroup>
 
@@ -34,7 +34,7 @@
 
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="5.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="5.0.4" />
   </ItemGroup>
 
   <ItemGroup>
