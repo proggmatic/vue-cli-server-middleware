@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 namespace Proggmatic.SpaServices.VueCli.Util
 {
     /// <summary>
-    /// Original: https://github.com/dotnet/aspnetcore/blob/master/src/Middleware/SpaServices.Extensions/src/Util/TaskTimeoutExtensions.cs
+    /// Original: https://github.com/dotnet/aspnetcore/blob/main/src/Middleware/Spa/SpaServices.Extensions/src/Util/TaskTimeoutExtensions.cs
     /// </summary>
     internal static class TaskTimeoutExtensions
     {

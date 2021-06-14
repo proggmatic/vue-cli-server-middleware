@@ -7,7 +7,7 @@ namespace Proggmatic.SpaServices.VueCli
 {
     /// <summary>
     /// Extension methods for enabling Vue development server middleware support.
-    /// Original template here: https://github.com/dotnet/aspnetcore/blob/master/src/Middleware/SpaServices.Extensions/src/ReactDevelopmentServer/ReactDevelopmentServerMiddlewareExtensions.cs
+    /// Original template here: https://github.com/dotnet/aspnetcore/blob/main/src/Middleware/Spa/SpaServices.Extensions/src/ReactDevelopmentServer/ReactDevelopmentServerMiddlewareExtensions.cs
     /// </summary>
     public static class VueCliServerMiddlewareExtensions
     {

@@ -10,7 +10,7 @@ namespace Proggmatic.SpaServices.VueCli.Util
     /// <summary>
     /// Wraps a <see cref="StreamReader"/> to expose an evented API, issuing notifications
     /// when the stream emits partial lines, completed lines, or finally closes.
-    /// Original: https://github.com/dotnet/aspnetcore/blob/master/src/Middleware/SpaServices.Extensions/src/Util/EventedStreamReader.cs
+    /// Original: https://github.com/dotnet/aspnetcore/blob/main/src/Middleware/Spa/SpaServices.Extensions/src/Util/EventedStreamReader.cs
     /// </summary>
     internal class EventedStreamReader
     {
@@ -92,7 +92,7 @@ namespace Proggmatic.SpaServices.VueCli.Util
 
                 OnChunk(new ArraySegment<char>(buf, 0, chunkLength));
 
-                int lineBreakPos;
+                int lineBreakPos = -1;
                 int startPos = 0;
 
                 // get all the newlines
@@ -108,7 +108,7 @@ namespace Proggmatic.SpaServices.VueCli.Util
                 // get the rest
                 if (lineBreakPos < 0 && startPos < chunkLength)
                 {
-                    _linesBuffer.Append(buf, startPos, chunkLength);
+                    _linesBuffer.Append(buf, startPos, chunkLength - startPos);
                 }
             }
         }

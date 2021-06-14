@@ -13,7 +13,7 @@ namespace Proggmatic.SpaServices.VueCli.Npm
 {
     /// <summary>
     /// Executes the <c>script</c> entries defined in a <c>package.json</c> file, capturing any output written to stdio.
-    /// Original: https://github.com/dotnet/aspnetcore/blob/master/src/Middleware/SpaServices.Extensions/src/Npm/NodeScriptRunner.cs
+    /// Original: https://github.com/dotnet/aspnetcore/blob/main/src/Middleware/Spa/SpaServices.Extensions/src/Npm/NodeScriptRunner.cs
     /// </summary>
     internal class NodeScriptRunner : IDisposable
     {

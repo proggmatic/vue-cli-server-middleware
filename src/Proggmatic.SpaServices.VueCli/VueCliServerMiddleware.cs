@@ -19,7 +19,7 @@ using Proggmatic.SpaServices.VueCli.Util;
 namespace Proggmatic.SpaServices.VueCli
 {
     /// <summary>
-    /// Original template here: https://github.com/dotnet/aspnetcore/blob/master/src/Middleware/SpaServices.Extensions/src/ReactDevelopmentServer/ReactDevelopmentServerMiddleware.cs
+    /// Original template here: https://github.com/dotnet/aspnetcore/blob/main/src/Middleware/Spa/SpaServices.Extensions/src/ReactDevelopmentServer/ReactDevelopmentServerMiddleware.cs
     /// </summary>
     internal static class VueCliServerMiddleware
     {

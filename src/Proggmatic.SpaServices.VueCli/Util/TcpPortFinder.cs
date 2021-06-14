@@ -5,7 +5,7 @@ using System.Net.Sockets;
 namespace Proggmatic.SpaServices.VueCli.Util
 {
     /// <summary>
-    /// Original: https://github.com/dotnet/aspnetcore/blob/master/src/Middleware/SpaServices.Extensions/src/Util/TcpPortFinder.cs
+    /// Original: https://github.com/dotnet/aspnetcore/blob/main/src/Middleware/Spa/SpaServices.Extensions/src/Util/TcpPortFinder.cs
     /// </summary>
     internal static class TcpPortFinder
     {

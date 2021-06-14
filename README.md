@@ -7,7 +7,7 @@ Provides dev-time support for [Vue CLI](https://cli.vuejs.org/) in ASP.NET Core'
 Only .NET 5.0 and higher will be supported.
 
 This is mostly copied and modified from ASP.net Core's implementation for React:
-[https://github.com/dotnet/aspnetcore/blob/master/src/Middleware/SpaServices.Extensions/src/ReactDevelopmentServer](https://github.com/dotnet/aspnetcore/blob/master/src/Middleware/SpaServices.Extensions/src/ReactDevelopmentServer).
+[https://github.com/dotnet/aspnetcore/tree/main/src/Middleware/Spa/SpaServices.Extensions/src/ReactDevelopmentServer](https://github.com/dotnet/aspnetcore/tree/main/src/Middleware/Spa/SpaServices.Extensions/src/ReactDevelopmentServer).
 
 # Usage
 
