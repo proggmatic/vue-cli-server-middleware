@@ -64,9 +64,9 @@ namespace Proggmatic.SpaServices.VueCli
                 // the first request times out, subsequent requests could still work.
                 var timeout = spaBuilder.Options.StartupTimeout;
                 return targetUriTask.WithTimeout(timeout,
-                    $"The vue-cli server did not start listening for requests " +
-                    $"within the timeout period of {timeout.Seconds} seconds. " +
-                    $"Check the log output for error information.");
+                    "The vue-cli server did not start listening for requests " +
+                    $"within the timeout period of {timeout.TotalSeconds} seconds. " +
+                    "Check the log output for error information.");
             });
         }
 
@@ -104,7 +104,7 @@ namespace Proggmatic.SpaServices.VueCli
                 {
                     throw new InvalidOperationException(
                         $"The {pkgManagerCommand} script '{scriptName}' exited without indicating that the " +
-                        $"vue-cli server was listening for requests. The error output was: " +
+                        "vue-cli server was listening for requests. The error output was: " +
                         $"{stdErrReader.ReadAsString()}", ex);
                 }
             }

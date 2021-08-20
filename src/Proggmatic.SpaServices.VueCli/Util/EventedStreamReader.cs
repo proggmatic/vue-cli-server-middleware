@@ -92,7 +92,7 @@ namespace Proggmatic.SpaServices.VueCli.Util
 
                 OnChunk(new ArraySegment<char>(buf, 0, chunkLength));
 
-                int lineBreakPos = -1;
+                int lineBreakPos;
                 int startPos = 0;
 
                 // get all the newlines
