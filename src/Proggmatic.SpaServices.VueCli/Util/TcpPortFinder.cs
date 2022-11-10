@@ -2,25 +2,24 @@ using System.Net;
 using System.Net.Sockets;
 
 
-namespace Proggmatic.SpaServices.VueCli.Util
+namespace Proggmatic.SpaServices.VueCli.Util;
+
+/// <summary>
+/// Original: https://github.com/dotnet/aspnetcore/blob/main/src/Middleware/Spa/SpaServices.Extensions/src/Util/TcpPortFinder.cs
+/// </summary>
+internal static class TcpPortFinder
 {
-    /// <summary>
-    /// Original: https://github.com/dotnet/aspnetcore/blob/main/src/Middleware/Spa/SpaServices.Extensions/src/Util/TcpPortFinder.cs
-    /// </summary>
-    internal static class TcpPortFinder
+    public static int FindAvailablePort()
     {
-        public static int FindAvailablePort()
+        var listener = new TcpListener(IPAddress.Loopback, 0);
+        listener.Start();
+        try
         {
-            var listener = new TcpListener(IPAddress.Loopback, 0);
-            listener.Start();
-            try
-            {
-                return ((IPEndPoint)listener.LocalEndpoint).Port;
-            }
-            finally
-            {
-                listener.Stop();
-            }
+            return ((IPEndPoint)listener.LocalEndpoint).Port;
+        }
+        finally
+        {
+            listener.Stop();
         }
     }
 }

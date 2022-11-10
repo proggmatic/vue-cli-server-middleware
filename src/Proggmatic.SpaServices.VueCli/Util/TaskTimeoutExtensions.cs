@@ -1,36 +1,31 @@
-using System;
-using System.Threading.Tasks;
+namespace Proggmatic.SpaServices.VueCli.Util;
 
-
-namespace Proggmatic.SpaServices.VueCli.Util
+/// <summary>
+/// Original: https://github.com/dotnet/aspnetcore/blob/main/src/Middleware/Spa/SpaServices.Extensions/src/Util/TaskTimeoutExtensions.cs
+/// </summary>
+internal static class TaskTimeoutExtensions
 {
-    /// <summary>
-    /// Original: https://github.com/dotnet/aspnetcore/blob/main/src/Middleware/Spa/SpaServices.Extensions/src/Util/TaskTimeoutExtensions.cs
-    /// </summary>
-    internal static class TaskTimeoutExtensions
+    public static async Task WithTimeout(this Task task, TimeSpan timeoutDelay, string message)
     {
-        public static async Task WithTimeout(this Task task, TimeSpan timeoutDelay, string message)
+        if (task == await Task.WhenAny(task, Task.Delay(timeoutDelay)))
         {
-            if (task == await Task.WhenAny(task, Task.Delay(timeoutDelay)))
-            {
-                task.Wait(); // Allow any errors to propagate
-            }
-            else
-            {
-                throw new TimeoutException(message);
-            }
+            task.Wait(); // Allow any errors to propagate
         }
-
-        public static async Task<T> WithTimeout<T>(this Task<T> task, TimeSpan timeoutDelay, string message)
+        else
         {
-            if (task == await Task.WhenAny(task, Task.Delay(timeoutDelay)))
-            {
-                return task.Result;
-            }
-            else
-            {
-                throw new TimeoutException(message);
-            }
+            throw new TimeoutException(message);
+        }
+    }
+
+    public static async Task<T> WithTimeout<T>(this Task<T> task, TimeSpan timeoutDelay, string message)
+    {
+        if (task == await Task.WhenAny(task, Task.Delay(timeoutDelay)))
+        {
+            return task.Result;
+        }
+        else
+        {
+            throw new TimeoutException(message);
         }
     }
 }
