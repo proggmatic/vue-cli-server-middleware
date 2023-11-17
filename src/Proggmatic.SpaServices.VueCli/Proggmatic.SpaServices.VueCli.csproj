@@ -22,6 +22,7 @@
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
     <PackageIcon>icon.png</PackageIcon>
     <PackageReadmeUrl>https://raw.githubusercontent.com/proggmatic/vue-cli-server-middleware/master/README.md</PackageReadmeUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
 
     <PackageTags>Vue CLI SPA middleware server serve</PackageTags>
     <PackageReleaseNotes>
@@ -35,7 +36,7 @@
   <ItemGroup>
     <None Include="../../icon.png" Pack="true" PackagePath="/" />
     <None Include="../../LICENSE.txt" Pack="true" PackagePath="/" />
-    <None Include="../../README.md" />
+    <None Include="../../README.md" Pack="true" PackagePath="/"/>
   </ItemGroup>
 
 
