@@ -1,13 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
+    <TargetFrameworks>net6.0;net7.0;net8.0</TargetFrameworks>
     <AssemblyName>Proggmatic.SpaServices.VueCli</AssemblyName>
     <LangVersion>latest</LangVersion>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
 
-    <Version>7.0.0</Version>
+    <Version>8.0.0</Version>
 
     <Title>Vue CLI Server Middleware</Title>
     <Description>Vue CLI middleware and helpers for building and serving single page applications on ASP.NET Core.</Description>
@@ -25,7 +25,7 @@
 
     <PackageTags>Vue CLI SPA middleware server serve</PackageTags>
     <PackageReleaseNotes>
-      Updated to .NET 7.0.0
+      Updated to .NET 8.0.0
     </PackageReleaseNotes>
 
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
@@ -47,9 +47,13 @@
     <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="7.0.0" />
   </ItemGroup>
 
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net8.0' ">
+    <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="8.0.0" />
+  </ItemGroup>
+
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="All" />
   </ItemGroup>
 
 </Project>

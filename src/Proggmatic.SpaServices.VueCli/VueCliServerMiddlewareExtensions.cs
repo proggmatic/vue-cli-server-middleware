@@ -23,10 +23,7 @@ public static class VueCliServerMiddlewareExtensions
         this ISpaBuilder spaBuilder,
         string npmScript = "serve")
     {
-        if (spaBuilder == null)
-        {
-            throw new ArgumentNullException(nameof(spaBuilder));
-        }
+        ArgumentNullException.ThrowIfNull(spaBuilder);
 
         var spaOptions = spaBuilder.Options;
 
